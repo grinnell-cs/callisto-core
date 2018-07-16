@@ -1,0 +1,174 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!--[if IE]>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <![endif]-->
+    <title>Grinnell Survivor Support</title>
+    <!-- BOOTSTRAP CORE CSS -->
+    <link href="{% static 'outer_site/assets/css/bulma.css' %}" rel="stylesheet" />
+    <!-- ION ICONS STYLES -->
+    <link href="{% static 'outer_site/assets/css/ionicons.css' %}" rel="stylesheet" />
+    <!-- FONT AWESOME ICONS STYLES -->
+    <link href="{% static 'outer_site/assets/css/font-awesome.css' %}" rel="stylesheet" />
+    <!-- FANCYBOX POPUP STYLES -->
+    <link href="{% static 'outer_site/assets/js/source/jquery.fancybox.css' %}" rel="stylesheet" />
+    <!-- STYLES FOR VIEWPORT ANIMATION -->
+    <link href="{% static 'outer_site/assets/css/animations.min.css'  %}" rel="stylesheet" />
+    <!-- CUSTOM CSS -->
+    <link href="{% static 'outer_site/assets/css/style-override.css'  %}" rel="stylesheet" />
+    {% block additionalcss %}{% endblock %}
+    <!-- CORE JQUERY -->
+    <script src="{% static 'outer_site/assets/js/jquery-1.11.1.js' %}"></script>
+    <script src="{% static 'outer_site/assets/js/functionality.js' %}"></script>
+    <script src="{% static 'outer_site/assets/js/escape.js' %}"></script>
+
+    <!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body data-spy="scroll" data-target="#menu-section">
+    <!--MENU SECTION START-->
+    <nav class="navbar">
+      <div class="navbar-brand" style="background: #385c6c;">
+        <a class="navbar-item" href="/">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Grinnell_College_logo.png" alt="A logo of Grinnell College." width="30" height="30">
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-for="topNavbar">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div id="topNavbar" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="/">Home</a>
+          <a class="navbar-item" href="/how-it-works">How It Works</a>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <p class="navbar-link">Learn & Support</p>
+            <div class="navbar-dropdown is-boxed">
+              <a class="navbar-item" href="/help-a-friend">Help A Friend</a>
+              <a class="navbar-item" href="/reporting-options">Reporting Options</a>
+              <a class="navbar-item" href="/support-services">Support Services</a>
+              <a class="navbar-item" href="/about">About Survivor Support</a>
+              <hr class="navbar-divider">
+              <a class="navbar-item" href="/contact-us">Contact Us</a>
+              <a class="navbar-item" href="/privacy">Privacy</a>
+              <a class="navbar-item" href="/terms">Terms</a>
+            </div>
+          </div>
+        </div>
+    
+        <div class="navbar-end">
+          {% if user.is_authenticated %}
+          <div class="navbar-item">
+            <div class="field is-grouped">
+              <p class="control">
+                <a class="button is-primary" href="reports/dashboard/">Dashboard</a>
+              </p>
+              <p class="control">
+                <a class="button is-primary" href="/account/logout">Sign Out</a>
+              </p>
+              <p class="control">
+                <a class="button is-primary" id="get-away" href="#">Leave</a>
+              </p>
+            </div>
+          </div>
+          {% else %}
+          <div class="navbar-item">
+            <div class="field is-grouped">
+              <p class="control">
+                <a class="button is-primary" href="/account/login/">Log In</a>
+              </p>
+              <p class="control">
+                <a class="button is-primary" href="/account/signup">Sign Up</a>
+              </p>
+              <p class="control">
+                <a class="button is-primary"  id="get-away" href="#">Leave</a>
+              </p>
+            </div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </nav>
+    <!--MENU SECTION END-->
+    <!--HOME SECTION START-->
+    {% block content %}{% endblock %}
+    <!--HOME SECTION END-->
+    <!--FOOTER START-->
+    <footer class="footer is-grey-lighter">
+      <div class="level">
+        <div class="level-left">
+          <figure class="image is-48x48">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Grinnell_College_logo.png">
+          </figure>
+        </div>
+        <div class="level-item">
+          <div class="field is-grouped">
+            <p class="control">
+              <a class="button is-text is-small" href="/about">About</a>
+            </p>
+            <p class="control">
+              <a class="button is-text is-small" href="/contact">Contact Us</a>
+            </p>
+            <p class="control">
+              <a class="button is-text is-small" href="/help-a-friend">Help A Friend</a>
+            </p>
+            <p class="control">
+              <a class="button is-text is-small" href="/privacy">Privacy</a>
+            </p>
+            <p class="control">
+              <a class="button is-text is-small" href="/terms">Terms</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="level">
+        <div class="level-left">
+          <p> For immediate help, contact the National Sexual Assault Hotline</br>
+          <a href="tel:+18006564673"> 1.800.656.4673</a>
+          <i class="fa fa-phone"></i> | Free. Confidential. 24/7 </p>
+        </div>
+        <div class="level-right">
+          <p>Copyright © 2018 Survivor Support</p>
+        </div>
+      </div>
+    </footer>
+    <!--FOOTER END-->
+    <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME -->
+    <!-- BOOTSTRAP SCRIPTS -->
+    <!--<script src="{% static 'outer_site/assets/js/bootstrap.js' %}"></script>-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>-->
+    <!-- EASING SCROLL SCRIPTS PLUGIN -->
+    <script src="{% static 'outer_site/assets/js/vegas/jquery.vegas.min.js' %}"></script>
+    <!-- VEGAS SLIDESHOW SCRIPTS -->
+    <script src="{% static 'outer_site/assets/js/jquery.easing.min.js' %}"></script>
+    <!-- FANCYBOX PLUGIN -->
+    <script src="{% static 'outer_site/assets/js/source/jquery.fancybox.js' %}"></script>
+    <!-- ISOTOPE SCRIPTS -->
+    <script src="{% static 'outer_site/assets/js/jquery.isotope.js' %}"></script>
+    <!-- VIEWPORT ANIMATION SCRIPTS   -->
+    <!-- <script src="{% static 'outer_site/assets/js/appear.min.js' %}"></script>
+    <script src="{% static 'outer_site/assets/js/animations.min.js' %}"></script>-->
+    <!-- CUSTOM SCRIPTS -->
+    <script src="{% static 'outer_site/assets/js/custom-solid.js' %}"></script>
+    <!-- FONT AWESOME FONTS -->
+
+    <!-- TEMPLATE SCRIPTS -->
+    {% block scriptsAfterContent %}{% endblock %}
+  </body>
+
+</html>

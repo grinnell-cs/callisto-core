@@ -17,10 +17,13 @@ urlpatterns = [
     # includes
     url(r'^account/', include('callisto_core.accounts.urls')),
     url(r'^reports/', decorator_include(login_required, 'callisto_core.delivery.urls')),
-
+    # Grinnell addition
+    url(r'^', include('callisto_core.outer_site.urls')),
+    # /Grinnell addition
+    
     # login / signup
-    url(r'^$', django_views.RedirectView.as_view(
-        url=reverse_lazy('signup'))),
+    # url(r'^$', django_views.RedirectView.as_view(
+    #    url=reverse_lazy('signup'))),
     url(r'^signup/$', django_views.RedirectView.as_view(
         url=reverse_lazy('signup'))),
     url(r'^logout/$', django_views.RedirectView.as_view(

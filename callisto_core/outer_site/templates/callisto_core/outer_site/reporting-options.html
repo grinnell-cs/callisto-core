@@ -1,0 +1,39 @@
+{% extends 'template.html' %}
+{% block content %}
+<section class="hero is-primary">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Reporting Options
+      </h1>
+      <h2 class="subtitle">
+        Learn more about your options with Survivor Support, Grinnell, or law enforcement.
+      </h2>
+    </div>
+  </div>
+</section>
+<div class="tabs is-centered is-inverted" data-tabs-id="1">
+
+  <ul>
+    <li class="is-active">
+      <a id="survivor-support-button" data-tabs-id="1">
+        <span class="icon is-small"><i class="fas fa-smile" aria-hidden="true"></i></span>
+        <span>Using Survivor Support</span>
+      </a>
+    </li>
+    <li>
+      <a id="report-to-grinnell-button" data-tabs-id="1">
+        <span class="icon is-small"><i class="fas fa-notes-medical" aria-hidden="true"></i></span>
+        <span>Report to Grinnell</span>
+      </a>
+    </li>
+    <li>
+      <a id="report-to-police-button" data-tabs-id="1">
+        <span class="icon is-small"><i class="fas fa-gavel" aria-hidden="true"></i></span>
+        <span>Report to Police</span>
+      </a>
+    </li>
+  </ul>
+</div>
+</div>
+{% endblock %}

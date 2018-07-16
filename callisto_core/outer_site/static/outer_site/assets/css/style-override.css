@@ -1,0 +1,306 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu);
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+
+/* These variables are our color palette. They are specifically chosen
+  to conform to accessibility guidelines laid out in the WCAG recommendation:
+  https://www.w3.org/TR/2008/REC-WCAG20-20081211/
+  PLEASE:
+  * If you change these colors, test out the contrast between text and
+    backgrounds by using https://webaim.org/resources/contrastchecker/ or
+    http://www.contrastchecker.com/. You want it to conform to at least AA
+    standards.
+  * Don't put unnamed colors anywhere else in this document but :root
+    (and never in HTML). You can name a color in :root and then set the color
+    elsewhere using var(--color-name). This helps with clarity of code and
+    dramatically speeds up the process of changing palettes.
+  * Contact [lukerhad] with any questions. 
+    
+    -- NINJA ARYAN EDIT --
+    
+  * Google Chrome now has a built in Contrast Ratio field which tells you the contrast ratio
+    between color (the foreground/text color) and the background.
+  * Contact [mannarya] with any questions or Slack me up fam.
+*/
+
+:root {
+  --color-primary: #385c6c;
+  --color-footer: #DBDBDB;
+  
+  font-size: 20px;
+  background: white;
+}
+
+
+/***********************************
+             HELPERS
+***********************************/
+.has-margin {
+  margin: 1em;
+}
+.has-margin-left {
+  margin-left: 1em;
+}
+.has-margin-top {
+  margin-top: 1em;
+}
+.has-margin-right {
+  margin-right: 1em;
+}
+.has-margin-bottom {
+  margin-bottom: 1em;
+}
+
+.has-padding {
+  padding: 1em;
+}
+.has-padding-left {
+  padding-left: 1em;
+}
+.has-padding-top {
+  padding-top: 1em;
+}
+.has-padding-right {
+  padding-right: 1em;
+}
+.has-padding-bottom {
+  padding-bottom: 1em;
+}
+
+.has-no-margin {
+  margin: 0;
+}
+.has-no-padding {
+  padding: 0;
+}
+
+.has-padding-50 {
+  margin-left: 50%;
+}
+
+.is-horizontally-centered {
+  justify-content: center;
+}
+.is-vertically-centered {
+  align-items: center;
+}
+.is-centered-on-both {
+  justify-content: center;
+  align-items: center;
+}
+
+figure.image.is-centered {
+  margin: 0 auto;
+}
+
+ul.reports-view footer.card-footer a {
+  background: var(--color-primary);
+  color: white;
+}
+
+/***********************************
+         BULMA OVERRIDES
+***********************************/
+.is-primary {
+  background-color: var(--color-primary) !important;
+}
+.has-background-primary {
+  background-color: var(--color-primary) !important;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.section {
+  background: white;
+}
+
+.tabs {
+  background: white;
+  margin-bottom: 0 !important;
+  padding-bottom: 1.5em;
+}
+
+/*source: https://github.com/dansup/bulma-templates/blob/master/templates/landing.html */
+.hero.is-info {
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      var(--color-primary)
+    ), url('../img/temp/gates-winter.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.hero.is-info2 {
+  background: linear-gradient(
+      to left bottom,
+      rgba(0, 0, 0, 0.5),
+      var(--color-primary)
+    ), url('../img/temp/sunset.jpg') no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.level.no-margin-bottom{
+  margin-bottom: 0
+}
+
+.card-image > .fa {
+  font-size: 6rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  color: var(--color-primary);
+}
+.card-image > .fas {
+  font-size: 6rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  color: var(--color-primary);
+}
+
+.footer {
+  font-size: 16px;
+  background:var(--color-footer);
+}
+
+.button.is-small {
+  font-size: 16px;
+}
+
+.card{
+  height:100%;
+}
+
+
+.box.has-border{
+  border-color:var(--color-primary);
+  border-radius:4px;
+  border-style:solid;
+}
+
+.section.is-small{
+  font-size: 14px;
+}
+
+/***********************************
+           BULMA FIXES
+***********************************/
+.hero-body h1.title {
+  padding-bottom: 0.5em;
+}
+
+nav.navbar a.navbar-burger span {
+  color: white;
+}
+nav.navbar .navbar-brand > a:first-child {
+  background: white !important;
+}
+
+.card p.card-header-title {
+  margin-bottom: 0;
+}
+
+
+
+/***********************************
+            COMPONENTS
+***********************************/
+.tabs.is-inverted ul {
+  background: var(--color-primary);
+}
+.tabs.is-inverted ul li a {
+  color: white;
+}
+.tabs.is-inverted ul li a:hover {
+  color: var(--color-primary) !important;
+  text-decoration: none;
+}
+
+.tabs a {
+  border: none !important;
+}
+.tabs.is-inverted a:hover {
+  background: white;
+}
+
+.tabs a[aria-selected="true"] {
+  background: #679ab1 !important;
+}
+.tabs a[aria-selected="true"] span {
+  color: white !important;
+}
+
+/***********************************
+        REGISTRATION PAGE
+***********************************/
+input#id_username, input#id_password, input#id_password1, input#id_password2, input.styled-input {
+	  background-color: #fff;;
+    color: #363636;
+    -webkit-box-shadow: inset 0 1px 2px rgba(10,10,10,.1);
+    box-shadow: inset 0 1px 2px rgba(10,10,10,.1);
+	  moz-appearance: none;
+    -webkit-appearance: none;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    font-size: 1rem;
+    height: 2.25em;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    line-height: 1.5;
+    padding-bottom: calc(.375em - 1px);
+    padding-left: 2em;
+    padding-right: calc(.625em - 1px);
+    padding-top: calc(.375em - 1px);
+    position: relative;
+    vertical-align: top;
+}
+
+/***********************************
+          DASHBOARD PAGE
+***********************************/
+ul.reports-view {
+  margin: 0;
+}
+ul.reports-view .card {
+  margin: 2em 0;
+}
+
+/***********************************
+       WIZARD BUILDER STUFF
+***********************************/
+h2.wiz-question {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+li.review-item {
+    /*box-shadow: inset 0 0 0 1px black;*/
+    padding: 1em;
+    padding-bottom: 1.5em;
+}
+
+li .review-question {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+li.review-item:nth-child(2n) {
+    background: #d0eaf6;
+}
+
+h2.review-question {
+  margin-bottom: 1em;
+}
