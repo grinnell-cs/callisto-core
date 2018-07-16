@@ -1,4 +1,4 @@
-# callisto-core
+# callisto-core - Grinnell fork
 
 | Status | Support |
 | --- | --- |
