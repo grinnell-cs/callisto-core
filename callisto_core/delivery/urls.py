@@ -8,6 +8,12 @@ from . import views as delivery_views
 
 urlpatterns = [
     # record flow
+    # begin Grinnell addition
+    url(r'^reports/what-to-expect/$',
+        delivery_views.WhatToExpect.as_view(),
+        name='report_expect',
+        ),
+    # end Grinnell addition
     url(r'^$',
         django_views.RedirectView.as_view(
             url=reverse_lazy('report_new'),
