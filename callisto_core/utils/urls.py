@@ -15,7 +15,7 @@ from django.views.generic import base as django_views
 urlpatterns = [
 
     # includes
-    url(r'^account/', include('callisto_core.accounts.urls')),
+    url(r'^accounts/', include('callisto_core.accounts.urls')),
     url(r'^reports/', decorator_include(login_required, 'callisto_core.delivery.urls')),
     # Grinnell addition
     url(r'^', include('callisto_core.outer_site.urls')),
