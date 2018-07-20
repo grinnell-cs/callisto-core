@@ -14,6 +14,9 @@ views should define:
 from django.contrib.auth import views as auth_views
 
 from . import view_partials
+# Grinnell addition
+from django.views import generic
+# /Grinnell additions
 
 ################
 # auth views   #
@@ -24,6 +27,21 @@ class LoginView(
     auth_views.LoginView,
 ):
     template_name = 'callisto_core/delivery/login.html'
+
+
+################
+# record views   #
+################
+
+# begin Grinnell Addition (Aditi)
+# TODO: make a view in view_partials and import from there rather than generic
+class WhatToExpect(
+    generic.ListView,
+):
+    template_name = 'callisto_core/delivery/what_to_expect.html'
+    def get_queryset(self):
+        return;
+# end Grinnell Addition (Aditi)
 
 
 ################

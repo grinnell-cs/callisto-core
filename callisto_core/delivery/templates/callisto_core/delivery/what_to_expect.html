@@ -1,0 +1,92 @@
+{% extends 'callisto_core/delivery/base.html' %}
+{% block content %}
+
+<section class="hero is-primary is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">What to Expect</h1>
+      <h3 class="subtitle">Here's what you need to know before you begin.</h3>
+    </div>
+  </div>
+</section>
+
+<div class="section">
+  <div class="container has-text-centered">
+    <div class="column is-8 is-offset-2">
+      <div class="box has-border is-overlap">
+        <div class="section has-padding has-text-centered">
+          <p> Trust is paramount to Surivor Support. </br>We want to empower you to make the choice that’s right for you.</p>
+          <hr>
+          <p class="is-italic has-text-centered">Your record stays private to you. Please be sure to write down only what you are sure of; if you choose to report this record, this is the information your school will see.</p>
+        </div>
+        <div class="card-content has-text-weight-light">
+          <div class="media">
+            <div class="media-left">
+              <span class="icon">
+                <i class="fas fa-lock"></i>
+              </span>
+            </div>
+            <div class="media-content ">
+              <p> We encrypt each record with your passphrase so it is safe. Even we can't see your record.</p>
+            </div>
+          </div>
+          <div class="media">
+            <div class="media-left">
+              <span class="icon">
+                <i class="fa fa-paper-plane"></i>
+              </span>
+            </div>
+            <div class="media-content">
+              <p>We do not send your record to your school unless you choose to report it.</p>
+            </div>
+          </div>
+          <div class="media">
+            <div class="media-left">
+              <span class="icon">
+                <i class="fas fa-laptop"></i>
+              </span>
+            </div>
+            <div class="media-content">
+              <p>You can come back at any time to finish or update your record.</p>
+            </div>
+          </div>
+          <div class="media">
+            <div class="media-left">
+              <span class="icon">
+                <i class="fas fa-arrow-right"></i>
+              </span>
+            </div>
+            <div class="media-content">
+              <p>If you’re not ready to answer a question choose “I’d rather not say” or click “Next” to move forward.</p>
+            </div>
+          </div>
+          <div class="media">
+            <div class="media-left">
+              <span class="icon">
+                <i class="fas fa-envelope-open"></i>
+              </span>
+            </div>
+            <div class="media-content">
+              <p>If you choose to report this record to your school, you will need to give your school your contact information so that they can follow up.</p>
+            </div>
+          </div>
+          <div class="media">
+            <div class="media-left">
+              <span class="icon">
+                <i class="fas fa-facebook"></i>
+              </span>
+            </div>
+            <div class="media-content">
+              <p>If you’d like to enter into our matching system, you will need to have the perpetrator's Facebook URL.</p>
+            </div>
+          </div>
+          <div class="section has-padding-bottom">
+            <a class="button is-primary" href="{% url 'report_new' %}">Get Started</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+{% endblock %}
